@@ -1,5 +1,10 @@
 import React from 'react';
 import NewReviewForm from './NewReviewForm';
+import { connect } from 'react-redux';
+// import PropTypes from "prop-types";
+// import * as a from './../actions';
+import { withFirestore, isLoaded } from 'react-redux-firebase';
+
 
 class ReviewControl extends React.Component {
 
@@ -21,4 +26,10 @@ class ReviewControl extends React.Component {
   }
 }
 
-export default ReviewControl;
+ReviewControl.propTypes = {};
+const mapStateToProps = (state) => {
+  return state;
+};
+
+ReviewControl = connect(mapStateToProps)(ReviewControl);
+export default withFirestore(ReviewControl);

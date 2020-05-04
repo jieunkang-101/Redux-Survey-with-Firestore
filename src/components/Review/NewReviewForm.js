@@ -7,7 +7,7 @@ function NewReviewForm(props) {
   function addReviewToFirestore(event) {
     event.preventDefalt();
     props.onNewReviewCreation();
-    return firestore.collection('review').add(
+    return firestore.collection('reviews').add(
       {
         rating: event.target.rating.value,
         review: event.target.review.value,
@@ -19,7 +19,7 @@ function NewReviewForm(props) {
   return (
     <>
       <div className="form-card">
-        <form onSubmit = { addReviewToFirestore } class="form-group">
+        <form onSubmit = { addReviewToFirestore } className="form-group">
           <div className="form-check form-check-inline">
             <input className="form-check-input"  type='radio' name='rating' value="1" />
             <label className='form-check-label' for='rating1'>1</label>
