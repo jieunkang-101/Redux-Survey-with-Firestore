@@ -1,5 +1,6 @@
 import React from 'react';
 import NewReviewForm from './NewReviewForm';
+import ReviewList from './ReviewList';
 import { connect } from 'react-redux';
 // import PropTypes from "prop-types";
 // import * as a from './../actions';
@@ -20,6 +21,7 @@ class ReviewControl extends React.Component {
     return (
       <>
       <p>Welcome!</p>
+      <ReviewList />
       <NewReviewForm />
       </>
     )

@@ -4,16 +4,15 @@ import { useFirestore } from "react-redux-firebase";
 
 function NewReviewForm(props) {
   const firestore = useFirestore();
+
   function addReviewToFirestore(event) {
-    event.preventDefalt();
-    props.onNewReviewCreation();
-    return firestore.collection('reviews').add(
-      {
-        rating: event.target.rating.value,
-        review: event.target.review.value,
-        postTime: firestore.FieldValue.serverTimestamp()
-      }
-    );
+    event.preventDefault();
+    // props.onNewReviewCreation();
+    return firestore.collection('reviews').add({
+      rating: event.target.rating.value,
+      review: event.target.review.value,
+      postTime: firestore.FieldValue.serverTimestamp()
+    });
   }
 
   return (
@@ -35,7 +34,7 @@ function NewReviewForm(props) {
           <div className="form-group">
             <textarea name='review' placeholder='What did you think of the movie?(optional)' />
           </div>
-          <button type='submit' className="btn btn-outline-info">ADD</button>
+          <button type='submit' className="btn btn-outline-info">Submit</button>
         </form>
       </div>
     </>
@@ -43,7 +42,7 @@ function NewReviewForm(props) {
 }
 
 NewReviewForm.propTypes = {
-  onNewReviewCreation: PropTypes.func
+  // onNewReviewCreation: PropTypes.func
 };
 
 export default NewReviewForm;
