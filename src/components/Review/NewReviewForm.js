@@ -1,0 +1,43 @@
+import React from "react";
+import PropTypes from "prop-types";
+import { useFirestore } from "react-redux-firebase";
+
+function NewReviewForm(props) {
+  const firestore = useFirestore();
+  function addReviewToFirestore(event) {
+    event.preventDefalt();
+    props.onNewReviewCreation();
+  }
+
+
+  return (
+    <>
+      <div className="form-card">
+        <form onSubmit = { addReviewToFirestore } class="form-group">
+          <div className="form-check form-check-inline">
+            <input className="form-check-input"  type='radio' name='rating1' />
+            <label className='form-check-label' for='rating1'>1</label>
+            <input className="form-check-input"  type='radio' name='rating2' />
+            <label className='form-check-label' for='rating2'>2</label>
+            <input className="form-check-input"  type='radio' name='rating3' />
+            <label className='form-check-label' for='rating3'>3</label>
+            <input className="form-check-input"  type='radio' name='rating4' />
+            <label className='form-check-label' for='rating4'>4</label>
+            <input className="form-check-input"  type='radio' name='rating5' />
+            <label className='form-check-label' for='rating5'>5</label>
+          </div>
+          <div className="form-group">
+            <textarea name='review' placeholder='What did you think of the movie?(optional)' />
+          </div>
+          <button type='submit' className="btn btn-outline-info">ADD</button>
+        </form>
+      </div>
+    </>
+  );
+}
+
+NewReviewForm.propTypes = {
+  onNewReviewCreation: PropTypes.func
+};
+
+export default NewReviewForm;

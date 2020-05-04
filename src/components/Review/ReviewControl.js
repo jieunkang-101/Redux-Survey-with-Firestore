@@ -1,4 +1,5 @@
 import React from 'react';
+import NewReviewForm from './NewReviewForm';
 
 class ReviewControl extends React.Component {
 
@@ -14,6 +15,7 @@ class ReviewControl extends React.Component {
     return (
       <>
       <p>Welcome!</p>
+      <NewReviewForm />
       </>
     )
   }
