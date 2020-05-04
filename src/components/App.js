@@ -3,7 +3,7 @@ import Header from "./Header";
 // import Footer from './Footer';
 import ReviewControl from "./Review/ReviewControl";
 import Register from "./Register";
-import Signin from "./Signin";
+import SignIn from "./SignIn";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import '../App.css';
 
@@ -14,7 +14,7 @@ function App(){
     <Header />
     <Switch>
       <Route path="/register" component={Register} />
-      <Route path="/signin" component={Signin} />
+      <Route path="/signin" component={SignIn} />
       <Route path="/" component={ReviewControl} />
     </Switch>
     </Router>
