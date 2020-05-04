@@ -7,23 +7,29 @@ function NewReviewForm(props) {
   function addReviewToFirestore(event) {
     event.preventDefalt();
     props.onNewReviewCreation();
+    return firestore.collection('review').add(
+      {
+        rating: event.target.rating.value,
+        review: event.target.review.value,
+        postTime: firestore.FieldValue.serverTimestamp()
+      }
+    );
   }
-
 
   return (
     <>
       <div className="form-card">
         <form onSubmit = { addReviewToFirestore } class="form-group">
           <div className="form-check form-check-inline">
-            <input className="form-check-input"  type='radio' name='rating1' />
+            <input className="form-check-input"  type='radio' name='rating' value="1" />
             <label className='form-check-label' for='rating1'>1</label>
-            <input className="form-check-input"  type='radio' name='rating2' />
+            <input className="form-check-input"  type='radio' name='rating' value="2" />
             <label className='form-check-label' for='rating2'>2</label>
-            <input className="form-check-input"  type='radio' name='rating3' />
+            <input className="form-check-input"  type='radio' name='rating' value="3" />
             <label className='form-check-label' for='rating3'>3</label>
-            <input className="form-check-input"  type='radio' name='rating4' />
+            <input className="form-check-input"  type='radio' name='rating' value="4" />
             <label className='form-check-label' for='rating4'>4</label>
-            <input className="form-check-input"  type='radio' name='rating5' />
+            <input className="form-check-input"  type='radio' name='rating' value="5" />
             <label className='form-check-label' for='rating5'>5</label>
           </div>
           <div className="form-group">
