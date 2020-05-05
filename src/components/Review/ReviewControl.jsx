@@ -74,7 +74,8 @@ class ReviewControl extends React.Component {
     } else {
       return (
         <>
-          <ReviewList onReviewSelection = { this.handleChangingSelectedReview } />
+          <ReviewList 
+            onReviewSelection = { this.handleChangingSelectedReview } />
           <NewReviewForm />
         </>
       );

@@ -7,7 +7,7 @@ function NewReviewForm(props) {
 
   function addReviewToFirestore(event) {
     event.preventDefault();
-    props.onNewReviewCreation();
+    //props.onNewReviewCreation();
     return firestore.collection('reviews').add({
       rating: event.target.rating.value,
       review: event.target.review.value,
@@ -43,7 +43,7 @@ function NewReviewForm(props) {
 }
 
 NewReviewForm.propTypes = {
-  onNewReviewCreation: PropTypes.func
+  //onNewReviewCreation: PropTypes.func
 };
 
 export default NewReviewForm;

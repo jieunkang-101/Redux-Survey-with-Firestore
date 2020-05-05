@@ -14,4 +14,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.firestore();
 
+const databaseRef = firebase.database().ref();
+export const MovieRef = databaseRef.child('ratings');
+
 export default firebase;
