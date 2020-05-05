@@ -13,6 +13,9 @@ function Header(){
           <Link to="/rating">Rate</Link>
         </li>
         <li>
+          <Link to="/ratinglist">My Ratings</Link>
+        </li>
+        <li>
           <Link to="/register">Register</Link>
         </li>
         <li>
