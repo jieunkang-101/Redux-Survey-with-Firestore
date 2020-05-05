@@ -6,12 +6,10 @@ import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 
 function ReviewList(props) {
   useFirestoreConnect([ { collection: 'reviews' } ]);
-
   const reviews = useSelector((state) => state.firestore.ordered.reviews);
-
   if (isLoaded(reviews)) {
     return (
-      <>
+      <div className="review-list section">
       {reviews.map((review) => {
         return <Review
           whenReviewClicked = {props.onReviewSelection}
@@ -20,7 +18,7 @@ function ReviewList(props) {
           id={review.id}
           key = {review.id} />
       })}
-      </>
+      </div>
     )
   } else {
     return (
@@ -29,7 +27,7 @@ function ReviewList(props) {
       </>
     )
   }
-}
+}  
 
 ReviewList.propTypes = {
   onReviewSelection: PropTypes.func

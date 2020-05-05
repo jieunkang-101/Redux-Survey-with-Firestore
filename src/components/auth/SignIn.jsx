@@ -14,12 +14,12 @@ function SignIn(){
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(function () {
-        setSuccessMsg("successfully signed in!");
+        setSuccessMsg({ successMsg: "successfully signed in!" });
         console.log("Successfully signed in!");
       })
       .catch(function (error) {
         setErrorMsg(error.message);
-        console.log(error.message);
+        console.log({ errorMsg: error.message });
       });
   }
 

@@ -1,28 +1,34 @@
 import React from "react";
-import Header from "./Header";
-import ReviewControl from "./Review/ReviewControl";
-import Register from "./User/Register";
-import SignIn from "./User/SignIn";
-import SignOut from "./User/SignOut";
-import RatingPage from './Review/RatingPage';
-import RatingListPage from './Review/RatingList';
+import NavBar from './layout/NavBar';
+import Dashboard from './dashboard/Dashboard';
+import ReviewControl from "./review/ReviewControl";
+import Register from "./auth/Register";
+import SignIn from "./auth/SignIn";
+import SignOut from "./auth/SignOut";
+import RatingPage from './review/RatingPage';
+import RatingListPage from './review/RatingList';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import '../App.css';
+import Navbar from "./layout/NavBar";
 
 
 function App(){
 
   return ( 
     <Router>
-    <Header />
-    <Switch>
-      <Route path="/register" component={Register} />
-      <Route path="/signin" component={SignIn} />
-      <Route path="/signout" component={SignOut} />
-      <Route path="/rating" component={RatingPage} />
-      <Route path="/ratinglist" component={RatingListPage} />
-      <Route path="/" component={ReviewControl} />
-    </Switch>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route path='/' component={Dashboard} />
+        </Switch>
+        {/* <Route path="/register" component={Register} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/signout" component={SignOut} />
+        <Route path="/rating" component={RatingPage} />
+        <Route path="/ratinglist" component={RatingListPage} />
+        <Route path="/" component={ReviewControl} /> */}
+  
+      </div>
     </Router>
   )
 }

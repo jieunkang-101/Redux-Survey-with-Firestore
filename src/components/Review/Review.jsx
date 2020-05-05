@@ -4,12 +4,14 @@ import PropTypes from "prop-types";
 function Review(props) {
   return (
     <>
-    <div className="review" onClick = {() => props.whenReviewClicked(props.id)}>
-      <h3>{props.rating}</h3>
-      <h3>{props.review}</h3>
-      <h3>{props.postTime}</h3>
-    </div>  
-    <hr />
+      <div className="card z-depth-0 review" onClick = {() => props.whenReviewClicked(props.id)}>
+        <div className="card-content grey-text text-darken-3">
+          <span className="card-title">Review</span>
+          <p>{props.rating}</p>
+          <p>{props.review}</p>
+          <p className="grey-text">{props.postTime}</p>
+        </div>
+      </div>
     </>
   )
 }
@@ -17,7 +19,7 @@ function Review(props) {
 Review.propTypes = {
   rating: PropTypes.string.isRequired,
   review: PropTypes.string,
-  onReviewClicked: PropTypes.func
+  whenReviewClicked: PropTypes.func
 }
 
 export default Review;

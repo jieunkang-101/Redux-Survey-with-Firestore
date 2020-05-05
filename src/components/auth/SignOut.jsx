@@ -6,16 +6,17 @@ function SignOut(){
   const [ successMsg, setSuccessMsg ] = useState('');
   const [ errorMsg, setErrorMsg ] = useState(''); 
 
+
   function doSignOut() {
     firebase
       .auth()
       .signOut()
       .then(function () {
-        setSuccessMsg("Successfully signed out!");
+        setSuccessMsg({ successMsg: "Successfully signed out!" }) ;
         console.log("Successfully signed out!");
       })
       .catch(function (error) {
-        setErrorMsg(error.message);
+        setErrorMsg({ errorMsg: error.message });
         console.log(error.message);
       });
   }
