@@ -17,6 +17,32 @@ class ReviewControl extends React.Component {
     };
   }
 
+  handleReviewClick = () => {
+    if (this.state.selectedReview != null) {
+      this.setState({
+        selectedReview: null,
+        editing: false
+      });
+    } 
+  }
+
+  handleChangingSelectedReview = (id) => {
+    this.props.firestore.get({collection: 'reviews', doc: id}).then((review) => {
+      const firestoreReview = {
+        rating: review.get("rating"),
+        review: review.get("review"),
+        postTime: review.get("postTime"),
+        id: review.id
+      }
+      this.setState({selectedReview: firestoreReview });
+    });
+  }
+
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+
   render() {
     return (
       <>
