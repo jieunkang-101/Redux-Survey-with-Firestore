@@ -6,10 +6,10 @@ function ReviewDetail(props) {
   return (
     <React.Fragment>
       <h1>Review Detail</h1>
-      {/* <h3>{review.rating}</h3>
+      <h3>{review.rating}</h3>
       <p>{review.review}</p>
       <button onClick={ props.onClickingEdit }>Update Review</button>
-      <button onClick={()=> onClickingDelete(review.id) }>Delete Review</button> */}
+      <button onClick={()=> onClickingDelete(review.id) }>Delete Review</button>
       <hr/>
     </React.Fragment>
   );

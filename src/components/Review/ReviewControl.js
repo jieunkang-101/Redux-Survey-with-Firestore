@@ -62,7 +62,7 @@ class ReviewControl extends React.Component {
       );
     } else if (this.state.selectedReview != null) {
       return (
-        <ReviewDetail />
+        <ReviewDetail review = { this.state.selectedReview } />
       );
     } else {
       return (
@@ -86,9 +86,9 @@ class ReviewControl extends React.Component {
 
 ReviewControl.propTypes = {};
 
-const mapStateToProps = (state) => {
-  return state;
-};
+// const mapStateToProps = (state) => {
+//   return state;
+// };
 
-ReviewControl = connect(mapStateToProps)(ReviewControl);
+// ReviewControl = connect(mapStateToProps)(ReviewControl);
 export default withFirestore(ReviewControl);
