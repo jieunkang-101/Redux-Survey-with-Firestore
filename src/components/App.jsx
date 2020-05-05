@@ -3,6 +3,7 @@ import Header from "./Header";
 import ReviewControl from "./Review/ReviewControl";
 import Register from "./User/Register";
 import SignIn from "./User/SignIn";
+import SignOut from "./User/SignOut";
 import RatingPage from './Review/RatingPage';
 import RatingListPage from './Review/RatingList';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -17,6 +18,7 @@ function App(){
     <Switch>
       <Route path="/register" component={Register} />
       <Route path="/signin" component={SignIn} />
+      <Route path="/signout" component={SignOut} />
       <Route path="/rating" component={RatingPage} />
       <Route path="/ratinglist" component={RatingListPage} />
       <Route path="/" component={ReviewControl} />
