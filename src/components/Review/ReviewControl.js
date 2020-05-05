@@ -1,11 +1,12 @@
 import React from 'react';
-import NewReviewForm from './NewReviewForm';
 import ReviewList from './ReviewList';
+import ReviewDetail from './ReviewDetail';
+import NewReviewForm from './NewReviewForm';
+import EditReviewForm from './EditReviewForm';
 import { connect } from 'react-redux';
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 // import * as a from './../actions';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
-
 
 class ReviewControl extends React.Component {
 
@@ -42,19 +43,49 @@ class ReviewControl extends React.Component {
     this.setState({editing: true});
   }
 
+  handleEditingReviewInList = () => {
+    this.setState({
+      editing: false,
+      selectedReview: null
+    });
+  }
+
+  handleDeletingReview = (id) => {
+    this.props.firestore.delete({collection: 'reviews', doc: id});
+    this.setState({selectedReview: null});
+  }
+
+  setVisibility = () => {
+    if (this.state.editing) {
+      return (
+        <EditReviewForm />
+      );
+    } else if (this.state.selectedReview != null) {
+      return (
+        <ReviewDetail />
+      );
+    } else {
+      return (
+        <>
+          <ReviewList onReviewSelection = { this.handleChangingSelectedReview } />
+          <NewReviewForm />
+        </>
+      );
+    }
+  }
 
   render() {
+    console.log("State", this.state);
     return (
       <>
-      <p>Welcome!</p>
-      <ReviewList />
-      <NewReviewForm />
+      { this.setVisibility() }
       </>
     )
   }
 }
 
 ReviewControl.propTypes = {};
+
 const mapStateToProps = (state) => {
   return state;
 };

@@ -1,24 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useFirestore } from "react-redux-firebase";
+import { useFirestore } from 'react-redux-firebase';
 
-function NewReviewForm(props) {
+function EditReviewForm (props) {
   const firestore = useFirestore();
+  const { review } = props;
 
-  function addReviewToFirestore(event) {
+  function editReviewToFirestore(event) {
     event.preventDefault();
-    props.onNewReviewCreation();
-    return firestore.collection('reviews').add({
+    props.onEditReview();
+    const propertiesToUpdate = {
       rating: event.target.rating.value,
       review: event.target.review.value,
       postTime: firestore.FieldValue.serverTimestamp()
-    });
+    }
+    return firestore.update({collection: 'reviews', doc: review.id }, propertiesToUpdate);
   }
 
   return (
-    <>
+    <React.Fragment>
       <div className="form-card">
-        <form onSubmit = { addReviewToFirestore } className="form-group">
+        <form onSubmit = { editReviewToFirestore } className="form-group">
           <div className="form-check form-check-inline">
             <input className="form-check-input"  type='radio' name='rating' value="1" />
             <label className='form-check-label' for='rating1'>1</label>
@@ -37,12 +39,12 @@ function NewReviewForm(props) {
           <button type='submit' className="btn btn-outline-info">Submit</button>
         </form>
       </div>
-    </>
+    </React.Fragment>
   );
 }
 
-NewReviewForm.propTypes = {
-  onNewReviewCreation: PropTypes.func
+EditReviewForm.propTypes = {
+  onEditReview: PropTypes.func
 };
 
-export default NewReviewForm;
+export default EditReviewForm;

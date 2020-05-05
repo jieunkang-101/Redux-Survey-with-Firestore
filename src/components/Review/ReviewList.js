@@ -14,9 +14,11 @@ function ReviewList(props) {
       <>
       {reviews.map((review) => {
         return <Review
+          whenReviewClicked = {props.onReviewSelection}
           rating = {review.rating}
           review = {review.review}
-          key = {reviews.id} />
+          id={review.id}
+          key = {review.id} />
       })}
       </>
     )
@@ -29,6 +31,8 @@ function ReviewList(props) {
   }
 }
 
-ReviewList.propTypes = {};
+ReviewList.propTypes = {
+  onReviewSelection: PropTypes.func
+};
 
 export default ReviewList;
