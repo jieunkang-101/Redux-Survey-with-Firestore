@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import firebase from "firebase/app";
 
 function SignIn(){  
+
+  const [ successMsg, setSuccessMsg ] = useState('');
+  const [ errorMsg, setErrorMsg ] = useState(''); 
+
   function doSignIn(event) {
     event.preventDefault();
     const email = event.target.signinEmail.value;
@@ -10,10 +14,11 @@ function SignIn(){
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(function () {
+        setSuccessMsg("successfully signed up!");
         console.log("Successfully signed in!");
-        // return <Redirect to="/" />;
       })
       .catch(function (error) {
+        setErrorMsg(error.message);
         console.log(error.message);
       });
   }

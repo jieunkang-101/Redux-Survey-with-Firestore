@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./Header";
 import ReviewControl from "./Review/ReviewControl";
-import Register from "./Register";
-import SignIn from "./SignIn";
+import Register from "./User/Register";
+import SignIn from "./User/SignIn";
 import RatingPage from './Review/RatingPage';
 import RatingListPage from './Review/RatingList';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import FlashMessage from './FlashMessage';
 import firebase from "firebase/app";
+// import PropTypes from 'prop-types';
 
 function Register() {
+
+  const [ successMsg, setSuccessMsg ] = useState('');
+  const [ errorMsg, setErrorMsg ] = useState(''); 
+
   function doSignUp(event) {
     event.preventDefault();
     const email = event.target.email.value;
@@ -10,9 +16,11 @@ function Register() {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(function () {
+        setSuccessMsg("successfully signed up!");
         console.log("successfully signed up!");
       })
       .catch(function (error) {
+        setErrorMsg(error.message);
         console.log(error.message);
       });
   }
