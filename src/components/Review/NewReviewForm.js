@@ -18,6 +18,7 @@ function NewReviewForm(props) {
   return (
     <>
       <div className="form-card">
+        <h2>Add New Review</h2>
         <form onSubmit = { addReviewToFirestore } className="form-group">
           <div className="form-check form-check-inline">
             <input className="form-check-input"  type='radio' name='rating' value="1" />

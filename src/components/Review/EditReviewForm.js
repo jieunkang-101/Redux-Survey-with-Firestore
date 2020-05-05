@@ -20,6 +20,7 @@ function EditReviewForm (props) {
   return (
     <React.Fragment>
       <div className="form-card">
+        <h2>Edit Review</h2>
         <form onSubmit = { editReviewToFirestore } className="form-group">
           <div className="form-check form-check-inline">
             <input className="form-check-input"  type='radio' name='rating' value="1" />

@@ -58,11 +58,18 @@ class ReviewControl extends React.Component {
   setVisibility = () => {
     if (this.state.editing) {
       return (
-        <EditReviewForm />
+        <EditReviewForm 
+          review = { this.state.selectedReview }
+          onEditReview = { this.handleEditingReviewInList }  
+        />
       );
     } else if (this.state.selectedReview != null) {
       return (
-        <ReviewDetail review = { this.state.selectedReview } />
+        <ReviewDetail 
+          review = { this.state.selectedReview } 
+          onClickingDelete = {this.handleDeletingReview} 
+          onClickingEdit = {this.handleEditClick}
+        />
       );
     } else {
       return (
