@@ -6,7 +6,7 @@ import { compose } from 'redux';
 
 function ReviewDetail(props) {
   // const id = props.match.params.id;
-  // console.log("props", props);
+  console.log("props", props);
   const { review, onClickingDelete } = props;
   if (review) {
     return (
@@ -19,7 +19,6 @@ function ReviewDetail(props) {
           </div>
           <div className="card-action grey lighten-4 grey-text">
             <div>Posted by {review.authorFirstName} {review.authorLastName}</div>
-            <div>{review.createAt}</div>
           </div>
         </div>
           <button onClick={ props.onClickingEdit }>Update Review</button>

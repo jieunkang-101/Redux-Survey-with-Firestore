@@ -14,8 +14,8 @@ const firebaseConfig = {
 }
 
 firebase.initializeApp(firebaseConfig);
-// firebase.firestore();
-firebase.firestore().settings({ timestampsInSnapshots: true });
+firebase.firestore();
+// firebase.firestore().settings({ timestampsInSnapshots: true });
 
 // const databaseRef = firebase.database().ref();
 // export const MovieRef = databaseRef.child('ratings');

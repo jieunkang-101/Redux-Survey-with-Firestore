@@ -1,8 +1,8 @@
 import React from 'react';
 import Review from './Review';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
-import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
+// import PropTypes from 'prop-types';
+// import { useSelector } from 'react-redux';
+// import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 import { Link } from 'react-router-dom';
 
 const ReviewList = ({reviews}) => {
@@ -10,9 +10,9 @@ const ReviewList = ({reviews}) => {
     <div className="review-list section">
       { reviews && reviews.map(review => {
         return (
-          <Link to={'/review/' + review.id}>
+          <Link to={'/review/' + review.id} key={review.id}>
             <Review 
-              // review={review}
+              // review={review} 
               movieTitle = {review.movieTitle} 
               rating = {review.rating}
               content = {review.content}
