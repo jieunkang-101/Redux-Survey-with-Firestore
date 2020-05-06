@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { NavLink } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 function ReviewDetail(props) {
-  const id = props.match.params.id;
-  const { review, onClickingDelete } = props;
+  // const id = props.match.params.id;
+  const { review, auth, onClickingDelete } = props;
+  if (!auth.uid) return <Redirect to='/signin' />
   if (review) {
     return (
       <div className="container section review-detail">
@@ -50,7 +52,8 @@ const mapStateToProps = (state, ownProps) => {
   console.log("detail",reviews);
   const review = reviews ? reviews[id] : null;
   return {
-    review: review
+    review: review,
+    auth: state.firebase.auth
   }
 }
 

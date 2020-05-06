@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 // import { useFirestore } from "react-redux-firebase";
 import { connect } from 'react-redux';
 import { createReview } from '../../actions';
+import { Redirect } from 'react-router-dom';
 
 class NewReviewForm extends Component {
   state = {
@@ -19,11 +20,12 @@ class NewReviewForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    //console.log(this.state);
     this.props.createReview(this.state);
   }
 
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to='/signin' />
     return (
       <div className="container">
         <form onSubmit = { this.handleSubmit } className="white">
@@ -64,13 +66,19 @@ class NewReviewForm extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
 const  mapDispatchToProps = (dispatch) => {
   return {
     createReview: (review) => dispatch(createReview(review))
   }
 }
 
-export default connect(null, mapDispatchToProps)(NewReviewForm);
+export default connect(mapStateToProps, mapDispatchToProps)(NewReviewForm);
 
 
 

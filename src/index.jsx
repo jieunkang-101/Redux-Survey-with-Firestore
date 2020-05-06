@@ -12,7 +12,6 @@ import 'firebase/auth';
 import thunk from 'redux-thunk';
 import middlewareLogger from './middleware/middleware-logger';
 
-
 const store = createStore(
   rootReducer,
   compose(
@@ -39,13 +38,14 @@ const rrfProps = {
   createFirestoreInstance
 }
 
-ReactDOM.render(
-  <Provider store={store}>
-     <ReactReduxFirebaseProvider { ...rrfProps }>
-      <App />
-    </ReactReduxFirebaseProvider>
-  </Provider>,
-  document.getElementById('root')
-);
-
+// store.firebaseAuthIsReady.then(() => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <ReactReduxFirebaseProvider { ...rrfProps }>
+        <App />
+      </ReactReduxFirebaseProvider>
+    </Provider>,
+    document.getElementById('root')
+  );
+// });
 serviceWorker.unregister();
