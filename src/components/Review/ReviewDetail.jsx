@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 
 function ReviewDetail(props) {
   console.log(props);
-  // const id = props.match.params.id;
+  const id = props.match.params.id;
 
   const { review, onClickingDelete } = props;
   return (
     <div className="container section review-detail">
       <div className="card z-depth-o">
         <div className="card-content">
-          <span className="card-title">Review Detials</span>
+          <span className="card-title">Review Detials - {id}</span>
           <p>{review.rating}</p>
           <p>{review.content}</p>
         </div>

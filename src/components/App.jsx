@@ -8,7 +8,7 @@ import SignOut from "./auth/SignOut";
 import RatingPage from './review/RatingPage';
 import RatingListPage from './review/RatingList';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import '../App.css';
+import '../index.css';
 import Navbar from "./layout/NavBar";
 import ReviewDetail from "./review/ReviewDetail";
 import NewReviewForm from './review/NewReviewForm';
@@ -27,12 +27,6 @@ function App(){
           <Route path="/signup" component={SignUp} />
           <Route path="/create" component={NewReviewForm} />
         </Switch>
-        {/* 
-        <Route path="/signin" component={SignIn} />
-        <Route path="/signout" component={SignOut} />
-        <Route path="/rating" component={RatingPage} />
-        <Route path="/ratinglist" component={RatingListPage} />
-        <Route path="/" component={ReviewControl} /> */}
   
       </div>
     </Router>
