@@ -28,6 +28,10 @@ class NewReviewForm extends Component {
       <div className="container">
         <form onSubmit = { this.handleSubmit } className="white">
           <h5 className="grey-text text-darken-3">Add New Review</h5>
+          <div className="input-field">
+            <label htmlFor="movieTitle">Movie Title</label>
+            <input type="text" id="movieTitle" onChange={this.handleChange} />
+          </div>
           <label>
             <input type="radio" id="rating" name="rating" value="1" onChange={this.handleChange} />
             <span>1</span>

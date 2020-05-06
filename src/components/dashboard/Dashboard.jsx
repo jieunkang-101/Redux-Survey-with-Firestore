@@ -4,6 +4,8 @@ import ReviewList from '../review/ReviewList';
 import ReviewControl from "../review/ReviewControl";
 import NewReviewForm from '../review/NewReviewForm';
 import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 
 class Dashboard extends Component {
   
@@ -27,10 +29,15 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
-    reviews: state.review.reviews
+    reviews: state.firestore.ordered.reviews
   }
 }
 
-
-export default connect(mapStateToProps)(Dashboard);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'reviews' }
+  ])
+)(Dashboard) 

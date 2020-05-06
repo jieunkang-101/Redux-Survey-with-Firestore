@@ -29,9 +29,10 @@ class ReviewControl extends React.Component {
   handleChangingSelectedReview = (id) => {
     this.props.firestore.get({collection: 'reviews', doc: id}).then((review) => {
       const firestoreReview = {
+        movieTitle: review.get("movieTitle"),
         rating: review.get("rating"),
         content: review.get("content"),
-        postTime: review.get("postTime"),
+        createAt: review.get("createAt"),
         id: review.id
       }
       this.setState({selectedReview: firestoreReview });

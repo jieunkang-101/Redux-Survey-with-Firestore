@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 function Review(props) {
   return (
     <>
-      <div className="card z-depth-0 review" onClick = {() => props.whenReviewClicked(props.id)}>
+      {/* <div className="card z-depth-0 review" onClick = {() => props.whenReviewClicked(props.id)}> */}
+      <div className="card z-depth-0 review">
         <div className="card-content grey-text text-darken-3">
-          <span className="card-title">Review</span>
+          <span className="card-title">{props.movieTitle}</span>
           <p>{props.rating}</p>
           <p>{props.content}</p>
           <p className="grey-text">{props.postTime}</p>

@@ -16,7 +16,8 @@ import middlewareLogger from './middleware/middleware-logger';
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk.withExtraArgument({ getFirestore, getFirebase }), middlewareLogger),
+    // applyMiddleware(thunk.withExtraArgument({ getFirestore, getFirebase }), middlewareLogger),
+    applyMiddleware(thunk.withExtraArgument({ getFirestore, getFirebase })),
     reduxFirestore(firebase),
     // reactReduxFirebase(firebase),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
