@@ -15,6 +15,12 @@ const reviewReducer = (state = initState, action) => {
     case c.CREATE_REVIEW_ERROR:
       console.log("create review error", action.err);
       return state;  
+    case c.UPDATE_REVIEW:
+      console.log("updated review", action.review);
+      return state;
+    case c.UPDATE_REVIEW_ERROR:
+      console.log("update review error", action.err);
+      return state;    
     default:
       return state;     
   }

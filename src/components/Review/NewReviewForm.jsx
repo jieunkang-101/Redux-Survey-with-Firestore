@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import PropTypes from "prop-types";
-import { useFirestore } from "react-redux-firebase";
+// import PropTypes from "prop-types";
+// import { useFirestore } from "react-redux-firebase";
 import { connect } from 'react-redux';
 import { createReview } from '../../actions';
 
-
 class NewReviewForm extends Component {
   state = {
+    movieTitle: '',
     rating: '',
     content: ''
   }
@@ -19,7 +19,7 @@ class NewReviewForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.state);
+    //console.log(this.state);
     this.props.createReview(this.state);
   }
 
@@ -56,7 +56,7 @@ class NewReviewForm extends Component {
             <textarea id="content" className="materialize-textarea"  placeholder='What did you think of the movie?(optional)' onChange={this.handleChange}></textarea>
           </div>  
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Submit</button>
+            <button className="btn pink lighten-1 z-depth-0 waves-effect">Submit<i className="material-icons right">send</i></button>
           </div>
         </form>
       </div>
