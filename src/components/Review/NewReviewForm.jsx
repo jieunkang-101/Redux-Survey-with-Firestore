@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from "prop-types";
 import { useFirestore } from "react-redux-firebase";
 import { connect } from 'react-redux';
-import { createReview } from '../../actions/reveiwAction';
+import { createReview } from '../../actions';
+
 
 class NewReviewForm extends Component {
   state = {

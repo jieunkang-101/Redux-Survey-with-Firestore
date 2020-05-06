@@ -5,7 +5,6 @@ import NewReviewForm from './NewReviewForm';
 import EditReviewForm from './EditReviewForm';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
-// import * as a from './../actions';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
 
 class ReviewControl extends React.Component {
