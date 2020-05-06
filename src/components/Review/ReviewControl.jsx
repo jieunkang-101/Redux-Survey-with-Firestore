@@ -31,7 +31,7 @@ class ReviewControl extends React.Component {
     this.props.firestore.get({collection: 'reviews', doc: id}).then((review) => {
       const firestoreReview = {
         rating: review.get("rating"),
-        review: review.get("review"),
+        content: review.get("content"),
         postTime: review.get("postTime"),
         id: review.id
       }

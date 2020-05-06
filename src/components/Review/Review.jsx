@@ -8,7 +8,7 @@ function Review(props) {
         <div className="card-content grey-text text-darken-3">
           <span className="card-title">Review</span>
           <p>{props.rating}</p>
-          <p>{props.review}</p>
+          <p>{props.content}</p>
           <p className="grey-text">{props.postTime}</p>
         </div>
       </div>
@@ -18,7 +18,7 @@ function Review(props) {
 
 Review.propTypes = {
   rating: PropTypes.string.isRequired,
-  review: PropTypes.string,
+  content: PropTypes.string,
   whenReviewClicked: PropTypes.func
 }
 

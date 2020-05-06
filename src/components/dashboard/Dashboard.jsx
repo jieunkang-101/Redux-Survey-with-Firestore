@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Notifications from './Notifications';
 import ReviewList from '../review/ReviewList';
 import ReviewControl from "../review/ReviewControl";
+import NewReviewForm from '../review/NewReviewForm';
 
 class Dashboard extends Component {
 

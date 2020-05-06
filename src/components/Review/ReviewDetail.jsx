@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function ReviewDetail(props) {
+function ReviewDetail(props) {
+  console.log(props);
+  // const id = props.match.params.id;
+
   const { review, onClickingDelete } = props;
   return (
     <div className="container section review-detail">
@@ -9,7 +12,7 @@ export default function ReviewDetail(props) {
         <div className="card-content">
           <span className="card-title">Review Detials</span>
           <p>{review.rating}</p>
-          <p>{review.review}</p>
+          <p>{review.content}</p>
         </div>
         <div className="card-action grey lighten-4 grey-test">
          <button onClick={ props.onClickingEdit }>Update Review</button>
@@ -25,3 +28,5 @@ ReviewDetail.propTypes = {
   onClickingDelete: PropTypes.func,
   onClickingEdit: PropTypes.func
 };
+
+export default ReviewDetail;

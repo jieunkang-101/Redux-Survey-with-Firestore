@@ -18,29 +18,34 @@ function EditReviewForm (props) {
   }
 
   return (
-    <React.Fragment>
-      <div className="form-card">
-        <h2>Edit Review</h2>
-        <form onSubmit = { editReviewToFirestore } className="form-group">
-          <div className="form-check form-check-inline">
-            <input className="form-check-input"  type='radio' name='rating' value="1" />
-            <label className='form-check-label' htmlFor='rating1'>1</label>
-            <input className="form-check-input"  type='radio' name='rating' value="2" />
-            <label className='form-check-label' htmlFor='rating2'>2</label>
-            <input className="form-check-input"  type='radio' name='rating' value="3" />
-            <label className='form-check-label' htmlFor='rating3'>3</label>
-            <input className="form-check-input"  type='radio' name='rating' value="4" />
-            <label className='form-check-label' htmlFor='rating4'>4</label>
-            <input className="form-check-input"  type='radio' name='rating' value="5" />
-            <label className='form-check-label' htmlFor='rating5'>5</label>
-          </div>
-          <div className="form-group">
-            <textarea name='review' placeholder='What did you think of the movie?(optional)' />
-          </div>
-          <button type='submit' className="btn btn-outline-info">Submit</button>
-        </form>
-      </div>
-    </React.Fragment>
+    <div className="container">
+      <form onSubmit = { editReviewToFirestore } className="white">
+      {/* <form onSubmit = { this.handleSubmit } className="white"> */}
+        <h5 className="grey-text text-darken-3">Edit Review</h5>
+        <label>
+          <input type="radio" name="rating" value="1" />
+          <span>1</span>
+        </label>
+        <label>
+          <input type="radio" name="rating" value="2" />
+          <span>2</span>
+        </label>
+        <label>
+          <input type="radio" name="rating" value="3" />
+          <span>3</span>
+        </label>
+        <label>
+          <input type="radio" name="rating" value="4" />
+          <span>4</span>
+        </label>
+        <label>
+          <input type="radio" name="rating" value="5" />
+          <span>5</span>
+        </label>
+        <textarea name="content" id="" cols="30" rows="10" className="materialize-textarea"  placeholder='What did you think of the movie?(optional)'></textarea>
+        <button className="btn pink lighten-1 z-depth-0">Update</button>
+      </form>
+    </div>
   );
 }
 

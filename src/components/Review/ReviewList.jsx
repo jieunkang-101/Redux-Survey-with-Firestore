@@ -14,7 +14,7 @@ function ReviewList(props) {
         return <Review
           whenReviewClicked = {props.onReviewSelection}
           rating = {review.rating}
-          review = {review.review}
+          content = {review.content}
           id={review.id}
           key = {review.id} />
       })}
