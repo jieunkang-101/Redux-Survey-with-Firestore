@@ -33,6 +33,7 @@ const rrfProps = {
   config: {
     userProfile: "users",
     useFirestoreForProfile: true,
+    attachAuthIsReady: true
     },
   dispatch: store.dispatch,
   createFirestoreInstance
