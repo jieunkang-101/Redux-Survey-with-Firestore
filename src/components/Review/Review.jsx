@@ -1,5 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
+import moment from 'moment';
+//import PropTypes from "prop-types";
 
 function Review({review}) {
   return (
@@ -10,16 +11,17 @@ function Review({review}) {
           <span className="card-title">{review.movieTitle}</span>
           <p>{review.rating}</p>
           <p className="grey-text">Posted by {review.authorFirstName} {review.authorLastName}</p>
+          <p className="grey-text">{moment(review.createAt.toDate()).calendar()}</p>
         </div>
       </div>
     </>
   )
 }
 
-Review.propTypes = {
-  rating: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  whenReviewClicked: PropTypes.func
-}
+// Review.propTypes = {
+//   rating: PropTypes.string.isRequired,
+//   content: PropTypes.string,
+//   whenReviewClicked: PropTypes.func
+// }
 
 export default Review;

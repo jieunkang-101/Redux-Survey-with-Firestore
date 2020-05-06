@@ -5,6 +5,7 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { NavLink } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
+import moment from 'moment';
 
 function ReviewDetail(props) {
   // const id = props.match.params.id;
@@ -21,6 +22,7 @@ function ReviewDetail(props) {
           </div>
           <div className="card-action grey lighten-4 grey-text">
             <div>Posted by {review.authorFirstName} {review.authorLastName}</div>
+            <div>{moment(review.createAt.toDate()).calendar()}</div>
           </div>
         </div>
           <button onClick={props.onClickingEdit} className='btn pink lighten-1 z-depth-0'>  
