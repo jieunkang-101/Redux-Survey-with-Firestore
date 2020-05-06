@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { updateReview } from '../../actions';
+import { updateReview } from '../../actions/reviewActions';
 
 class EditReviewForm extends Component {
   

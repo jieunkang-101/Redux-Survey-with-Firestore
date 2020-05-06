@@ -11,12 +11,11 @@ const ReviewList = ({reviews}) => {
       { reviews && reviews.map(review => {
         return (
           <Link to={'/review/' + review.id} key={review.id}>
-            <Review 
-              // review={review} 
-              movieTitle = {review.movieTitle} 
+            <Review review={review} />
+              {/* movieTitle = {review.movieTitle} 
               rating = {review.rating}
               content = {review.content}
-              key={review.id} />
+              key={review.id} /> */}
           </Link>    
         )
       })}

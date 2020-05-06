@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import PropTypes from "prop-types";
 // import { useFirestore } from "react-redux-firebase";
 import { connect } from 'react-redux';
-import { createReview } from '../../actions';
+import { createReview } from '../../actions/reviewActions';
 import { Redirect } from 'react-router-dom';
 
 class NewReviewForm extends Component {
@@ -21,6 +21,7 @@ class NewReviewForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.createReview(this.state);
+    this.props.history.push('/');
   }
 
   render() {
