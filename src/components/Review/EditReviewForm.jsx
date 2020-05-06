@@ -17,11 +17,12 @@ class EditReviewForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("thisState", this.state);
+    // console.log("thisState", this.state);
     this.props.updateReview(this.state);
   }
 
   render() {
+    console.log("this props", this.props);
     return (
       <div className="container">
         <form onSubmit = { this.handleSubmit } className="white">
@@ -58,10 +59,21 @@ class EditReviewForm extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   console.log(state)
+const mapStateToProps = (state) => {
+  // console.log(state)
+  return {
+    // review: state.firestore.data.reviews.id
+  }
+}
+
+// const mapStateToProps = (state, ownProps) => {
+//   // console.log(state);
+//   const id = ownProps.match.params.id;
+//   const reviews = state.firestore.data.reviews;
+//   const review = reviews ? reviews[id] : null;
+//   console.log("edit form",review);
 //   return {
-//     review: state.firestore.data.reviews.id
+//     review: review
 //   }
 // }
 
@@ -71,7 +83,7 @@ const  mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(EditReviewForm);
+export default connect(mapStateToProps, mapDispatchToProps)(EditReviewForm);
 
 
 
