@@ -13,8 +13,6 @@ const Navbar = (props) => {
     <div className="container">
       <Link to='/' className="brand-logo">MovieReview</Link>
       { links }
-      {/* <SignedInLinks />
-      <SignedOutLinks /> */}
     </div>
   </nav>
   )
