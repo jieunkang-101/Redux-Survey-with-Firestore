@@ -19,19 +19,18 @@ export const createReview = (review) => {
 };
 
 export const updateReview = (review) => {
-  
   console.log("action", review);
   return (dispatch, getState, { getFirebase, getFirestore }) => {
-    // make async call to database
+    // need to fix "review.id"
     const firestore = getFirestore();
-    // firestore.collection('reveiws').doc('review.id').update({ 
-    //   ...review,
-    //   authorFirstName: 'Update',
-    //   authorLastName: 'Test',
-    //   authorId: 12345,
-    //   createAt: new Date()
-    // }
-    firestore.update({collection: 'reviews', doc: review.id }, ...review
+    firestore.collection('reveiws').doc('review.id').update({ 
+      ...review,
+      authorFirstName: 'Update',
+      authorLastName: 'Test',
+      authorId: 12345,
+      createAt: new Date()
+    }
+    // firestore.update({collection: 'reviews', doc: review.id }, ...review
 
     ).then(() => {
       dispatch({ type: c.UPDATE_REVIEW, review });

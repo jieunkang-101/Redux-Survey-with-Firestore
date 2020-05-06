@@ -1,7 +1,25 @@
-const initState = {}
+import * as c from './../actions/ActionTypes';
 
-const authReducer = (state = initState, action) => {
-  return state
+const initState = {
+  authError: null
 }
 
-export default authReducer
+const authReducer = (state = initState, action) => {
+  switch(action.type) {
+    case c.LOGIN_ERROR:
+      return {
+        ...state, 
+        authError: 'Login failed'
+      }
+    case c.LOGIN_SUCCESS:
+      console.log('Login success');
+      return {
+        ...state,
+        authError: null
+      }  
+    default:
+      return state; 
+  }        
+}
+
+export default authReducer;

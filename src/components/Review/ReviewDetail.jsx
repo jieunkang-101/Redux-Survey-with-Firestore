@@ -6,8 +6,8 @@ import { compose } from 'redux';
 import { NavLink } from "react-router-dom";
 
 function ReviewDetail(props) {
+  // const id = props.match.params.id;
   const { review, onClickingDelete } = props;
-
   if (review) {
     return (
       <div className="container section review-detail">

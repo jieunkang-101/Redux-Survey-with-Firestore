@@ -22,7 +22,6 @@ class EditReviewForm extends Component {
   }
 
   render() {
-    console.log(props);
     return (
       <div className="container">
         <form onSubmit = { this.handleSubmit } className="white">
@@ -58,6 +57,13 @@ class EditReviewForm extends Component {
     );
   }
 }
+
+// const mapStateToProps = (state) => {
+//   console.log(state)
+//   return {
+//     review: state.firestore.data.reviews.id
+//   }
+// }
 
 const  mapDispatchToProps = (dispatch) => {
   return {
