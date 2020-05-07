@@ -1,29 +1,10 @@
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /reviews/{review} {
-    	allow read
-      allow write: if request.auth.uid != null
-      allow update: if request.auth.uid == userId
-      allow delete: if request.auth.uid == userId
-    }
-    match /users/{userId} {
-    	allow create
-      allow read: if request.auth.uid != null;
-      allow write: if request.auth.uid == userId
-    }
-    match /notifications/{notification} {
-    	allow read: if request.auth.uid != null
-    }
-  }
-}
-
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
    match /reviews/{review} {
       allow read;
-      allow create: if exists(/databases/$(database)/documents/users/$(request.auth.uid));
-      allow delete: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.admin == true;
+      allow create: if request.auth.uid != null;
+      allow update, delete: if request.auth.uid == resource.data.authorId;
     }
     match /users/{userId} {
     	allow read;
