@@ -7,6 +7,7 @@ const SignedInLinks = (props) => {
   return (
     <ul className="right">
       <li><NavLink to='/create'>Add New Review</NavLink></li>
+      <li><NavLink to='/userpage'>My Reviews</NavLink></li>
       <li><a href="http://localhost:3000/" onClick={props.signOut}>Log Out</a></li>
       <li><NavLink to='/' className='btn btn-floating pink lighten-1'>
         {props.profile.initials}

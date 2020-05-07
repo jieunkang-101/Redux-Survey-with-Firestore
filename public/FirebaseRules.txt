@@ -4,7 +4,7 @@ service cloud.firestore {
    match /reviews/{review} {
       allow read;
       allow create: if request.auth.uid != null;
-      allow update, delete: if request.auth.uid == resource.data.authorId;
+      allow delete: if request.auth.uid == resource.data.authorId;
     }
     match /users/{userId} {
     	allow read;

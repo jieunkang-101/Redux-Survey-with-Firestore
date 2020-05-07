@@ -8,6 +8,7 @@ import Navbar from "./layout/NavBar"
 import ReviewDetail from "./review/ReviewDetail"
 import NewReviewForm from './review/NewReviewForm'
 import EditReviewForm from './review/EditReviewForm'
+import UserPage from './review/UserPage'
 
 function App(){
   return ( 
@@ -21,6 +22,7 @@ function App(){
           <Route path="/signup" component={SignUp} />
           <Route path="/create" component={NewReviewForm} />
           <Route path="/edit" component={EditReviewForm} />
+          <Route path="/userpage" component={UserPage} />
         </Switch>
       </div>
     </Router>
