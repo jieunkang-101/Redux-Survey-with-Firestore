@@ -8,7 +8,7 @@ import moment from 'moment'
 import { deleteReview, selectReview } from '../../actions/reviewActions'
 
 function ReviewDetail(props) {
-  const { review, auth, reviewId } = props;
+  const { review, auth, reviewId, reviewActionError } = props;
   
   if (!auth.uid) return <Redirect to='/signin' />
  
@@ -30,11 +30,17 @@ function ReviewDetail(props) {
             <NavLink to={'/edit'}>Updete Review</NavLink>
           </button>
           <button onClick={props.deleteReview} className='btn pink lighten-1 z-depth-0'>Delete Review</button>
+          <div className="red-text center">
+              { reviewActionError ? <p>{reviewActionError}</p> : null }
+          </div>
       </div>
     )
   } else {
     return (
-      <Redirect to='/' />
+      // <Redirect to='/' />
+      <div className="container center">
+        <p>Loading review...</p>
+      </div>
     )
   }  
 }
@@ -46,7 +52,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     review: review,
     auth: state.firebase.auth,
-    reviewId: id
+    reviewId: id,
+    reviewActionError: state.review.reviewActionError
   }
 }
 

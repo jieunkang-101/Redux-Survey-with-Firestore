@@ -46,7 +46,9 @@ export const deleteReview = (id) => {
     firestore.collection('reviews').doc(id).delete().then(() => {
       console.log("Document successfully deleted!");
       dispatch({ type: c.DELETE_REVIEW })
-    });
+    }).catch((err) => {
+      dispatch({ type: c.DELETE_REVIEW_ERROR, err})
+    })
   }  
 }
 
