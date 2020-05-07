@@ -7,8 +7,7 @@ class EditReviewForm extends Component {
     super(props);
     this.state = {
       rating: '',
-      content: '',
-      // selectedReview: null,
+      content: ''
     };
   }
 
@@ -22,12 +21,13 @@ class EditReviewForm extends Component {
     e.preventDefault();
     // console.log("thisState", this.state);
     this.props.updateReview(this.state);
+    this.props.history.push('/');
   }
 
-
-
   render() {
-    // console.log("this props", this.props);
+    console.log(this.props)
+    // cosnt { } = this.props;
+    // if (auth.uid) return <Redirect to='/' /> 
     return (
       <div className="container">
         <form onSubmit = { this.handleSubmit } className="white">
@@ -64,21 +64,13 @@ class EditReviewForm extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(state);
-
-  return {
-    // reviewId: state.firestore.data.reviews.id
-  }
-}
-
 const  mapDispatchToProps = (dispatch) => {
   return {
     updateReview: (review) => dispatch(updateReview(review))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditReviewForm);
+export default connect(null, mapDispatchToProps)(EditReviewForm);
 
 
 

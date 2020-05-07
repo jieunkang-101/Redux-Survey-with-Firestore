@@ -9,9 +9,8 @@ import moment from 'moment';
 import { deleteReview, selectReview } from '../../actions/reviewActions';
 
 function ReviewDetail(props) {
-
-  const id = props.match.params.id;
   const { review, auth } = props;
+  
   if (!auth.uid) return <Redirect to='/signin' />
  
   if (review) {
@@ -30,16 +29,16 @@ function ReviewDetail(props) {
         </div>
           <button onClick={props.selectReview} className='btn pink lighten-1 z-depth-0'>  
             <NavLink to={'/edit'}>Updete Review</NavLink>
-            {/* <NavLink to={'/review/' + id + '/edit'} key={id}>Updete Review</NavLink> */}
           </button>
           <button onClick={props.deleteReview} className='btn pink lighten-1 z-depth-0'>Delete Review</button>
       </div>
     )
   } else {
     return (
-      <div className="container center">
-        <p>Loading review...</p>
-      </div>
+      <Redirect to='/' />
+      // <div className="container center">
+      //   <p>Loading review...</p>
+      // </div>
     )
   }  
 }
@@ -48,7 +47,6 @@ const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;
   const reviews = state.firestore.data.reviews;
   const review = reviews ? reviews[id] : null;
-  // console.log("detail's state", id);
   return {
     review: review,
     auth: state.firebase.auth,
@@ -58,7 +56,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const id = ownProps.match.params.id;
-  // console.log(id);
   return {
     deleteReview: () => dispatch(deleteReview(id)),
     selectReview: () => dispatch(selectReview(id))
