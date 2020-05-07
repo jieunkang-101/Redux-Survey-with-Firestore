@@ -1,7 +1,7 @@
-import React from 'react';
-import { NavLink } from "react-router-dom";
-import { connect } from 'react-redux';
-import { signOut } from '../../actions/authActions';
+import React from 'react'
+import { NavLink } from "react-router-dom"
+import { connect } from 'react-redux'
+import { signOut } from '../../actions/authActions'
 
 const SignedInLinks = (props) => {
   return (
@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(SignedInLinks);
+export default connect(null, mapDispatchToProps)(SignedInLinks)

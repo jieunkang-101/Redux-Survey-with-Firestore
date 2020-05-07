@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import SignedInLinks from './SignedInLinks';
-import SignedOutLinks from './SignedOutLinks';
-import { connect } from 'react-redux';
+import React from 'react'
+import { Link } from "react-router-dom"
+import SignedInLinks from './SignedInLinks'
+import SignedOutLinks from './SignedOutLinks'
+import { connect } from 'react-redux'
 
 const Navbar = (props) => {
   const { auth, profile } = props;
@@ -24,4 +24,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(Navbar)

@@ -1,21 +1,21 @@
-import React from 'react';
-import Review from './Review';
-// import PropTypes from 'prop-types';
-// import { useSelector } from 'react-redux';
-// import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import Review from './Review'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-const ReviewList = ({reviews}) => {
+const ReviewList = (props, {reviews} ) => {
+  // const { auth, thisReview } = props;
+  // const a = Object.values(thisReview)[0];
+  // console.log(a)
+  // console.log(auth.uid);
+  // if (auth.uid === )
+  
   return (
     <div className="review-list section">
       { reviews && reviews.map(review => {
         return (
           <Link to={'/review/' + review.id} key={review.id}>
             <Review review={review} />
-              {/* movieTitle = {review.movieTitle} 
-              rating = {review.rating}
-              content = {review.content}
-              key={review.id} /> */}
           </Link>    
         )
       })}
@@ -23,37 +23,12 @@ const ReviewList = ({reviews}) => {
   )
 }
 
-export default ReviewList;
+const mapStateToProps = (state) => {
+  //console.log(state)
+  return {
+    thisReview: state.firestore.ordered,
+    auth: state.firebase.auth
+  }
+}
 
-// function ReviewList(props) {
-//   useFirestoreConnect([ { collection: 'reviews' } ]);
-//   const reviews = useSelector((state) => state.firestore.ordered.reviews);
-//   if (isLoaded(reviews)) {
-//     return (
-//       <div className="review-list section">
-//         <h3>Reviews List</h3>
-//       {reviews.map((review) => {
-//         return <Review
-//           whenReviewClicked = {props.onReviewSelection}
-//           movieTitle = {review.movieTitle}
-//           rating = {review.rating}
-//           content = {review.content}
-//           id={review.id}
-//           key = {review.id} />
-//       })}
-//       </div>
-//     )
-//   } else {
-//     return (
-//       <>
-//         <h3>Loading...</h3>
-//       </>
-//     )
-//   }
-// }  
-
-// ReviewList.propTypes = {
-//   onReviewSelection: PropTypes.func
-// };
-
-// export default ReviewList;
+export default connect(mapStateToProps)(ReviewList)

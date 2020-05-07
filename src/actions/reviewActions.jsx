@@ -1,4 +1,4 @@
-import * as c from './ActionTypes';
+import * as c from './ActionTypes'
 
 export const createReview = (review) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {

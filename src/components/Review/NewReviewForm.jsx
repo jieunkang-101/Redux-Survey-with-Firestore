@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import { createReview } from '../../actions/reviewActions';
-import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { createReview } from '../../actions/reviewActions'
+import { Redirect } from 'react-router-dom'
 
 class NewReviewForm extends Component {
   state = {
@@ -77,64 +77,4 @@ const  mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewReviewForm);
-
-
-
-
-
-
-
-
-
-
-// function NewReviewForm(props) {
-
-//   const firestore = useFirestore();
-
-//   function addReviewToFirestore(event) {
-//     event.preventDefault();
-//     return firestore.collection('reviews').add({
-//       rating: event.target.rating.value,
-//       content: event.target.content.value,
-//       postTime: firestore.FieldValue.serverTimestamp()
-//     });
-//   }
-//   return (
-//     <>
-//       <div className="container">
-//         <form onSubmit = { addReviewToFirestore } className="white">
-//           <h5 className="grey-text text-darken-3">Add New Review</h5>
-//           <label>
-//             <input type="radio" id="rating" name="rating" value="1" />
-//             <span>1</span>
-//           </label>
-//           <label>
-//             <input type="radio" id="rating2" name="rating" value="2" />
-//             <span>2</span>
-//           </label>
-//           <label>
-//             <input type="radio" id="rating3" name="rating" value="3" />
-//             <span>3</span>
-//           </label>
-//           <label>
-//             <input type="radio" id="rating4" name="rating" value="4" />
-//             <span>4</span>
-//           </label>
-//           <label>
-//             <input type="radio" id="rating5" name="rating" value="5" />
-//             <span>5</span>
-//           </label>
-//           <div className="input-field">
-//             <textarea id="content" className="materialize-textarea"  placeholder='What did you think of the movie?(optional)'></textarea>
-//           </div>  
-//           <div className="input-field">
-//             <button className="btn pink lighten-1 z-depth-0">Submit</button>
-//           </div>
-//         </form>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default NewReviewForm;
+export default connect(mapStateToProps, mapDispatchToProps)(NewReviewForm)

@@ -1,10 +1,6 @@
-import * as c from './../actions/ActionTypes';
+import * as c from './../actions/ActionTypes'
 
-// const initState = {
-//   selectedReview: null
-// }
-
-const reviewReducer = (state=initState, action) => {
+const reviewReducer = (state, action) => {
   switch (action.type) {
     case c.CREATE_REVIEW:
       console.log("created review", action.review);
@@ -23,4 +19,4 @@ const reviewReducer = (state=initState, action) => {
   }
 }
 
-export default reviewReducer;
+export default reviewReducer

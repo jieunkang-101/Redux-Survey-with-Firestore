@@ -1,7 +1,6 @@
-import * as firebase from 'firebase';
-// import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+import * as firebase from 'firebase'
+import 'firebase/firestore'
+import 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -15,9 +14,5 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 firebase.firestore();
-// firebase.firestore().settings({ timestampsInSnapshots: true });
 
-// const databaseRef = firebase.database().ref();
-// export const MovieRef = databaseRef.child('ratings');
-
-export default firebase;
+export default firebase
