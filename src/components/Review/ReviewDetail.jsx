@@ -1,16 +1,19 @@
 import React from "react";
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { NavLink } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
 import moment from 'moment';
+import { deleteReview } from '../../actions/reviewActions';
 
 function ReviewDetail(props) {
-  // const id = props.match.params.id;
-  const { review, auth, onClickingDelete } = props;
+
+  const id = props.match.params.id;
+  const { review, auth } = props;
   if (!auth.uid) return <Redirect to='/signin' />
+ 
   if (review) {
     return (
       <div className="container section review-detail">
@@ -25,11 +28,11 @@ function ReviewDetail(props) {
             <div>{moment(review.createAt.toDate()).calendar()}</div>
           </div>
         </div>
-          <button onClick={props.onClickingEdit} className='btn pink lighten-1 z-depth-0'>  
+          <button className='btn pink lighten-1 z-depth-0'>  
             <NavLink to={'/edit'}>Updete Review</NavLink>
-            {/* <NavLink to={'/review/' + id + '/edit'}>Updete Review</NavLink> */}
+            {/* <NavLink to={'/review/' + id + '/edit'} key={id}>Updete Review</NavLink> */}
           </button>
-          <button onClick={()=> onClickingDelete(review.id)} className='btn pink lighten-1 z-depth-0'>Delete Review</button>
+          <button onClick={props.deleteReview} className='btn pink lighten-1 z-depth-0'>Delete Review</button>
       </div>
     )
   } else {
@@ -41,26 +44,28 @@ function ReviewDetail(props) {
   }  
 }
 
-// ReviewDetail.propTypes = {
-//   review: PropTypes.array,
-//   onClickingDelete: PropTypes.func,
-//   onClickingEdit: PropTypes.func
-// };
-
 const mapStateToProps = (state, ownProps) => {
-  // console.log(state);
   const id = ownProps.match.params.id;
   const reviews = state.firestore.data.reviews;
-  console.log("detail",reviews);
   const review = reviews ? reviews[id] : null;
+  // console.log("detail's state", id);
   return {
     review: review,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    reviewId: id
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const id = ownProps.match.params.id;
+  // console.log(id);
+  return {
+    deleteReview: () => dispatch(deleteReview(id))
   }
 }
 
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
     { collection: 'reviews' }
   ])

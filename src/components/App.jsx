@@ -1,11 +1,7 @@
 import React from "react";
-// import NavBar from './layout/NavBar';
 import Dashboard from './dashboard/Dashboard';
-// import ReviewControl from "./review/ReviewControl";
 import SignUp from "./auth/SignUp";
 import SignIn from "./auth/SignIn";
-// import RatingPage from './review/RatingPage';
-// import RatingListPage from './review/RatingList';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import '../index.css';
 import Navbar from "./layout/NavBar";
@@ -14,7 +10,6 @@ import NewReviewForm from './review/NewReviewForm';
 import EditReviewForm from './review/EditReviewForm';
 
 function App(){
-
   return ( 
     <Router>
       <div className="App">

@@ -3,10 +3,13 @@ import { connect } from 'react-redux';
 import { updateReview } from '../../actions/reviewActions';
 
 class EditReviewForm extends Component {
-  
-  state = {
-    rating: '',
-    content: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      rating: '',
+      content: '',
+      selectedReview: null,
+    };
   }
 
   handleChange = (e) => {
@@ -21,8 +24,10 @@ class EditReviewForm extends Component {
     this.props.updateReview(this.state);
   }
 
+
+
   render() {
-    console.log("this props", this.props);
+    // console.log("this props", this.props);
     return (
       <div className="container">
         <form onSubmit = { this.handleSubmit } className="white">
@@ -60,22 +65,11 @@ class EditReviewForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state)
+  console.log(state)
   return {
     // review: state.firestore.data.reviews.id
   }
 }
-
-// const mapStateToProps = (state, ownProps) => {
-//   // console.log(state);
-//   const id = ownProps.match.params.id;
-//   const reviews = state.firestore.data.reviews;
-//   const review = reviews ? reviews[id] : null;
-//   console.log("edit form",review);
-//   return {
-//     review: review
-//   }
-// }
 
 const  mapDispatchToProps = (dispatch) => {
   return {
