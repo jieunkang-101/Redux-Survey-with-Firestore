@@ -6,7 +6,7 @@ import { compose } from 'redux';
 import { NavLink } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
 import moment from 'moment';
-import { deleteReview } from '../../actions/reviewActions';
+import { deleteReview, selectReview } from '../../actions/reviewActions';
 
 function ReviewDetail(props) {
 
@@ -28,7 +28,7 @@ function ReviewDetail(props) {
             <div>{moment(review.createAt.toDate()).calendar()}</div>
           </div>
         </div>
-          <button className='btn pink lighten-1 z-depth-0'>  
+          <button onClick={props.selectReview} className='btn pink lighten-1 z-depth-0'>  
             <NavLink to={'/edit'}>Updete Review</NavLink>
             {/* <NavLink to={'/review/' + id + '/edit'} key={id}>Updete Review</NavLink> */}
           </button>
@@ -60,7 +60,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const id = ownProps.match.params.id;
   // console.log(id);
   return {
-    deleteReview: () => dispatch(deleteReview(id))
+    deleteReview: () => dispatch(deleteReview(id)),
+    selectReview: () => dispatch(selectReview(id))
   }
 }
 

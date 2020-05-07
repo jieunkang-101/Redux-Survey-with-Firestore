@@ -20,24 +20,21 @@ export const createReview = (review) => {
 };
 
 export const updateReview = (reviewToUpdate) => {
-  // console.log("reviewtoupdate", reviewToUpdate);
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
-    // const reviewId = getState().firestore.data.reviews[id];
-    // console.log("id", reviewId);
+    const review = getState().firestore.data.reviews;
+    const reviewId = Object.keys(review)[0];
 
-    firestore.collection('reviews').doc("reviewId").set({ 
+    firestore.collection('reviews').doc(reviewId).update({ 
       rating: reviewToUpdate.rating,
       content: reviewToUpdate.content,
       createAt: new Date()
-    }
-
-    ).then(() => {
+    }).then(() => {
+      console.log("Document successfully updated!");
       dispatch({ type: c.UPDATE_REVIEW, reviewToUpdate });
     }).catch((err) => {
       dispatch({ type: c.UPDATE_REVIEW_ERROR, err })
-      })
-    
+    });
   }
 }    
 
@@ -49,6 +46,23 @@ export const deleteReview = (id) => {
     firestore.collection('reviews').doc(id).delete().then(() => {
       console.log("Document successfully deleted!");
       dispatch({ type: c.DELETE_REVIEW })
+    });
+  }  
+}
+
+export const selectReview = (id) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+    const docRef = firestore.collection('reviews').doc(id)
+
+    docRef.get().then((doc) => {
+      if (doc.exists) {
+        console.log("Document data:", doc.data());
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }  
+      dispatch({ type: c.SELECT_REVIEW })
     });
   }  
 }

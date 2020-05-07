@@ -8,7 +8,7 @@ class EditReviewForm extends Component {
     this.state = {
       rating: '',
       content: '',
-      selectedReview: null,
+      // selectedReview: null,
     };
   }
 
@@ -65,9 +65,10 @@ class EditReviewForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  console.log(state);
+
   return {
-    // review: state.firestore.data.reviews.id
+    // reviewId: state.firestore.data.reviews.id
   }
 }
 
