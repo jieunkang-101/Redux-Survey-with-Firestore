@@ -1,15 +1,37 @@
 import React from 'react'
 import Review from './Review'
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
+/// import { connect } from 'react-redux'
 
-const ReviewList = (props, {reviews} ) => {
-  // const { auth, thisReview } = props;
-  // const a = Object.values(thisReview)[0];
-  // console.log(a)
-  // console.log(auth.uid);
-  // if (auth.uid === )
-  
+// const ReviewList = (props, {reviews} ) => {
+//   return (
+//     <div className="review-list section">
+//       { reviews && reviews.map(review => {
+//         return (
+//           <Link to={'/review/' + review.id} key={review.id}>
+//             <Review review={review} />
+//           </Link>    
+//         )
+//       })}
+//     </div>
+//   )
+// }
+
+// const ReviewList = (props) => {
+//   return (
+//     <div className="review-list section">
+//       { props.reviews && props.reviews.map(review => {
+//         return (
+//           <Link to={'/review/' + review.id} key={review.id}>
+//             <Review review={review} />
+//           </Link>    
+//         )
+//       })}
+//     </div>
+//   )
+// }
+
+const ReviewList = ({reviews}) => {
   return (
     <div className="review-list section">
       { reviews && reviews.map(review => {
@@ -23,12 +45,15 @@ const ReviewList = (props, {reviews} ) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  //console.log(state)
-  return {
-    thisReview: state.firestore.ordered,
-    auth: state.firebase.auth
-  }
-}
+export default ReviewList;
 
-export default connect(mapStateToProps)(ReviewList)
+
+// const mapStateToProps = (state) => {
+
+//   return {
+//     reviews: state.firestore.ordered.reviews,
+//     auth: state.firebase.auth
+//   }
+// }
+
+// export default connect(mapStateToProps)(ReviewList)

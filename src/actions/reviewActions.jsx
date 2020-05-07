@@ -23,8 +23,9 @@ export const updateReview = (reviewToUpdate) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
     const review = getState().firestore.data.reviews;
+    // console.log("test review", review);
     const reviewId = Object.keys(review)[0];
-
+    // console.log("id", reviewId);
     firestore.collection('reviews').doc(reviewId).update({ 
       rating: reviewToUpdate.rating,
       content: reviewToUpdate.content,
@@ -37,7 +38,6 @@ export const updateReview = (reviewToUpdate) => {
     });
   }
 }    
-
 
 export const deleteReview = (id) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {

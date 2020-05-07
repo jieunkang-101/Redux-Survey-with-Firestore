@@ -8,7 +8,7 @@ import moment from 'moment'
 import { deleteReview, selectReview } from '../../actions/reviewActions'
 
 function ReviewDetail(props) {
-  const { review, auth } = props;
+  const { review, auth, reviewId } = props;
   
   if (!auth.uid) return <Redirect to='/signin' />
  
@@ -26,7 +26,7 @@ function ReviewDetail(props) {
             <div>{moment(review.createAt.toDate()).calendar()}</div>
           </div>
         </div>
-          <button onClick={props.selectReview} className='btn pink lighten-1 z-depth-0'>  
+          <button onClick={props.selectReview(reviewId)} className='btn pink lighten-1 z-depth-0'>  
             <NavLink to={'/edit'}>Updete Review</NavLink>
           </button>
           <button onClick={props.deleteReview} className='btn pink lighten-1 z-depth-0'>Delete Review</button>
