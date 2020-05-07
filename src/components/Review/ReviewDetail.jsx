@@ -31,7 +31,7 @@ function ReviewDetail(props) {
           </button>
           <button onClick={props.deleteReview} className='btn pink lighten-1 z-depth-0'>Delete Review</button>
           <div className="red-text center">
-              { reviewActionError ? <p>{reviewActionError}</p> : null }
+            { reviewActionError ? <p>{reviewActionError}</p> : null }
           </div>
       </div>
     )
