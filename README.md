@@ -12,14 +12,23 @@
 ## 1. Description
 A React application that have CRUD functionality of user's review with firestore and firebase authentication.
 
-### :small_orange_diamond: Implemented the following features:
+### ▫︎ Preview
+<tabel>
+  <tr>
+    <td><img src="./public/img/screen-shot-1.png" width="240px" height="180px" /></td>
+    <td><img src="./public/img/screen-shot-2.png" width="240px" height="180px" /></td>
+    <td><img src="./public/img/screen-shot-3.png" width="240px" height="180px" /></td>
+  </tr>
+
+
+### ▫︎ Implemented the following features:
 * A user should be able to create, update and delete a review. All reviews should be stored in the database.
 * A user should be able to fill out and submit reviews. Review results should be submitted to the database. (A review result can be associated to a review by mimicking a one-to-many relationship.)
 * A user should be able to sign up, sign in, and sign out.
 * A user should have their own dashboard which lists the reviews they've created.
 
 ## 2. Development
-### :small_orange_diamond: Technologies Used:
+### ▫︎ Technologies Used:
 + [ReactJs](https://reactjs.org/) 
 + [Redux 4.0.5](https://redux.js.org/)
 + [React Redux 7.1.3](https://react-redux.js.org/)
@@ -29,7 +38,7 @@ A React application that have CRUD functionality of user's review with firestore
 + [Firestore](https://firebase.google.com/docs/firestore)
 + [bootstrap 4.4.1](https://getbootstrap.com/)
 
-### :small_orange_diamond: Run this project to development server
+### ▫︎ Run this project to development server
 ```bash
   $ git clone https://github.com/jieunkang-101/React-Review-App
   $ cd React-Review-App
