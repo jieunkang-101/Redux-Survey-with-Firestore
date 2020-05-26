@@ -1,14 +1,14 @@
-import React from "react"
-import Dashboard from './dashboard/Dashboard'
-import SignUp from "./auth/SignUp"
-import SignIn from "./auth/SignIn"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import '../index.css'
-import Navbar from "./layout/NavBar"
-import ReviewDetail from "./review/ReviewDetail"
-import NewReviewForm from './review/NewReviewForm'
-import EditReviewForm from './review/EditReviewForm'
-import UserPage from './review/UserPage'
+import React from "react";
+import Dashboard from './dashboard/Dashboard';
+import SignUp from "./auth/SignUp";
+import SignIn from "./auth/SignIn";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import '../index.css';
+import Navbar from "./layout/NavBar";
+import ReviewDetail from "./Review/ReviewDetail";
+import NewReviewForm from './Review/NewReviewForm';
+import EditReviewForm from './Review/EditReviewForm';
+import UserPage from './Review/UserPage';
 
 function App(){
   return ( 
@@ -29,4 +29,4 @@ function App(){
   )
 }
 
-export default App
+export default App;

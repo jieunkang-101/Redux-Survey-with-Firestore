@@ -1,11 +1,11 @@
-import React from "react"
-import { connect } from 'react-redux'
-import { firestoreConnect } from 'react-redux-firebase'
-import { compose } from 'redux'
-import { NavLink } from "react-router-dom"
-import { Redirect } from 'react-router-dom'
-import moment from 'moment'
-import { deleteReview, selectReview } from '../../actions/reviewActions'
+import React from 'react';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
+import { NavLink } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import moment from 'moment';
+import { deleteReview, selectReview } from '../../actions/reviewActions';
 
 function ReviewDetail(props) {
   const { review, auth, reviewId, reviewActionError } = props;
@@ -70,4 +70,4 @@ export default compose(
   firestoreConnect([
     { collection: 'reviews' }
   ])
-)(ReviewDetail)
+)(ReviewDetail);

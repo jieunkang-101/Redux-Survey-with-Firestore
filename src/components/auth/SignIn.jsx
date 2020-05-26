@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { signIn } from '../../actions/authActions'
-import { Redirect } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signIn } from '../../actions/authActions';
+import { Redirect } from 'react-router-dom';
 
 class SignIn extends Component {
   state = {
@@ -61,4 +61,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

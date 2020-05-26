@@ -1,9 +1,9 @@
-import * as c from './../actions/ActionTypes'
+import * as c from './../actions/ActionTypes';
 
 const initState = {
   selectedReview: null,
   reviewActionError: null
-}
+};
 
 const reviewReducer = (state=initState, action) => {
   const { id } = action;
@@ -39,6 +39,6 @@ const reviewReducer = (state=initState, action) => {
     default:
       return state;     
   }
-}
+};
 
-export default reviewReducer
+export default reviewReducer;

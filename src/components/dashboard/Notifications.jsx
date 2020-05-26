@@ -1,5 +1,5 @@
-import React from 'react'
-import moment from 'moment'
+import React from 'react';
+import moment from 'moment';
 
 const Notifications = (props) => {
   const { notifications } = props;
@@ -23,4 +23,4 @@ const Notifications = (props) => {
   )
 }
 
-export default Notifications
+export default Notifications;

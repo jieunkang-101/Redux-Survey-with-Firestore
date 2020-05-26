@@ -1,8 +1,8 @@
-import * as c from './../actions/ActionTypes'
+import * as c from './../actions/ActionTypes';
 
 const initState = {
   authError: null
-}
+};
 
 const authReducer = (state = initState, action) => {
   switch(action.type) {
@@ -35,6 +35,6 @@ const authReducer = (state = initState, action) => {
     default:
       return state; 
   }        
-}
+};
 
 export default authReducer;

@@ -10,15 +10,13 @@
 
 
 ## 1. Description
-A React application that allows a user to complete a review. Users should be able to create new reviews while other users should have the ability to fill out those reviews. 
+A React application that have CRUD functionality of user's review with firestore and firebase authentication.
 
 ### :small_orange_diamond: Implemented the following features:
 * A user should be able to create, update and delete a review. All reviews should be stored in the database.
-* A user should be able to fill out and submit reviews. review results should be submitted to the database. (A review result can be associated to a review by mimicking a one-to-many relationship.)
-A user should be able to sign up, sign in, and sign out.
+* A user should be able to fill out and submit reviews. Review results should be submitted to the database. (A review result can be associated to a review by mimicking a one-to-many relationship.)
+* A user should be able to sign up, sign in, and sign out.
 * A user should have their own dashboard which lists the reviews they've created.
-* Bonus: A user should be able to see the combined data on a review in their dashboard. For instance, if a review provides a 1-5 rating, return an average rating for all reviews.
-* Challenging: Try using a library like D3 to visualize data from reviews. This is only recommended if you have time to spare, interest in data visualization, and are doing a week-long project.
 
 ## 2. Development
 ### :small_orange_diamond: Technologies Used:
@@ -38,7 +36,7 @@ A user should be able to sign up, sign in, and sign out.
   $ npm install  
   $ npm start
 ```
-Now, it will automatically open http://localhost:3000 and show you Tap Room website.
+Now, it will automatically open http://localhost:3000 and show you review website.
 
 ## 3. Known Bugs
 There are no known bug at this moment

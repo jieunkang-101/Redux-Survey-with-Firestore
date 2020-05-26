@@ -1,5 +1,5 @@
-import React from "react"
-import moment from 'moment'
+import React from 'react';
+import moment from 'moment';
 
 function Review({review}) {
   return (
@@ -14,4 +14,4 @@ function Review({review}) {
   )
 }
 
-export default Review
+export default Review;

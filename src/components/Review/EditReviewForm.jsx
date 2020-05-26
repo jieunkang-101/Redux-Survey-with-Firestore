@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { updateReview } from '../../actions/reviewActions'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { updateReview } from '../../actions/reviewActions';
 
 class EditReviewForm extends Component {
   constructor(props) {
@@ -66,4 +66,4 @@ const  mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(EditReviewForm)
+export default connect(null, mapDispatchToProps)(EditReviewForm);

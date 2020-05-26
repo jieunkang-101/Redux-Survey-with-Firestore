@@ -1,7 +1,7 @@
-import React from 'react'
-import Review from './Review'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import Review from './Review';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const UserPage = (props) => {
   const { auth } = props;
@@ -38,4 +38,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(UserPage)
+export default connect(mapStateToProps)(UserPage);

@@ -1,18 +1,16 @@
-import React, { Component } from 'react'
-import Notifications from './Notifications'
-import ReviewList from '../review/ReviewList'
-import { connect } from 'react-redux'
-import { firestoreConnect } from 'react-redux-firebase'
-import { compose } from 'redux'
-//vimport { Redirect } from 'react-router-dom'
-import UserPage from '../review/UserPage'
+import React, { Component } from 'react';
+import Notifications from './Notifications';
+import ReviewList from '../Review/ReviewList';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
+import UserPage from '../Review/UserPage';
 
 
 class Dashboard extends Component {
   
   render(){
     const { reviews, auth, notifications } = this.props;
-    // if (!auth.uid) return <Redirect to='/signin' />
 
     return (
       <div className="dashboard container">
@@ -31,7 +29,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state)
   return {
     reviews: state.firestore.ordered.reviews,
     auth: state.firebase.auth,
@@ -45,4 +42,4 @@ export default compose(
     { collection: 'reviews', orderBy: ['createAt', 'desc'] },
     { collection: 'notifications', limit: 10, orderBy: ['time', 'desc'] }
   ])
-)(Dashboard) 
+)(Dashboard); 

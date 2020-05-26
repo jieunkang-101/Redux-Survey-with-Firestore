@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { createReview } from '../../actions/reviewActions'
-import { Redirect } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createReview } from '../../actions/reviewActions';
+import { Redirect } from 'react-router-dom';
 
 class NewReviewForm extends Component {
   state = {
@@ -77,4 +77,4 @@ const  mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewReviewForm)
+export default connect(mapStateToProps, mapDispatchToProps)(NewReviewForm);

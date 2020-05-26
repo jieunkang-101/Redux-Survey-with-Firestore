@@ -1,6 +1,6 @@
-import React from 'react'
-import Review from './Review'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import Review from './Review';
+import { Link } from 'react-router-dom';
 
 const ReviewList = ({reviews}) => {
   return (
@@ -16,4 +16,4 @@ const ReviewList = ({reviews}) => {
   )
 }
 
-export default ReviewList
+export default ReviewList;

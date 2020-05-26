@@ -1,15 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './components/App'
-import * as serviceWorker from './serviceWorker'
-import { createStore, applyMiddleware, compose } from 'redux'
-import rootReducer from './reducers/index'
-import { Provider } from 'react-redux'
-import { createFirestoreInstance, reduxFirestore, getFirestore } from 'redux-firestore'
-import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase'
-import firebase from "./firebase"
-import 'firebase/auth'
-import thunk from 'redux-thunk'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import * as serviceWorker from './serviceWorker';
+import { createStore, applyMiddleware, compose } from 'redux';
+import rootReducer from './reducers/index';
+import { Provider } from 'react-redux';
+import { createFirestoreInstance, reduxFirestore, getFirestore } from 'redux-firestore';
+import { ReactReduxFirebaseProvider, getFirebase } from 'react-redux-firebase';
+import firebase from "./firebase";
+import 'firebase/auth';
+import thunk from 'redux-thunk';
 // import middlewareLogger from './middleware/middleware-logger';
 
 const store = createStore(
