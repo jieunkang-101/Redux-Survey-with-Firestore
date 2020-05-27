@@ -1,6 +1,6 @@
 # Movie Review App
 
-#### React with NoSQL practice, 5.4.2020
+#### React with Firebase, 5.4.2020
 
 #### By **_Jieun Kang_**
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
@@ -10,7 +10,8 @@
 
 
 ## 1. Description
-A React application that have CRUD functionality of user's review with firestore and firebase authentication.
+A React application that have CRUD functionality of user's review with firestore, firebase authentication, and cloud functions.
+  * Deployed to firebase hosting! https://react-movie-review.firebaseapp.com/
 
 ### ▫︎ Preview
 <tabel>
@@ -19,7 +20,7 @@ A React application that have CRUD functionality of user's review with firestore
     <td><img src="./public/img/screen-shot-2.png" width="240px" height="180px" /></td>
     <td><img src="./public/img/screen-shot-3.png" width="240px" height="180px" /></td>
   </tr>
-
+</table>  
 
 ### ▫︎ Implemented the following features:
 * A user should be able to create, update and delete a review. All reviews should be stored in the database.
@@ -36,7 +37,7 @@ A React application that have CRUD functionality of user's review with firestore
 + [Webpack](https://webpack.js.org/)
 + [Firebase](https://firebase.google.com/)
 + [Firestore](https://firebase.google.com/docs/firestore)
-+ [bootstrap 4.4.1](https://getbootstrap.com/)
++ [Materialize](https://materializecss.com/)
 
 ### ▫︎ Run this project to development server
 ```bash
