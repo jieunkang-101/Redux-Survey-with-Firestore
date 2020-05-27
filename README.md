@@ -28,6 +28,11 @@ A React application that have CRUD functionality of user's review with firestore
 * A user should be able to sign up, sign in, and sign out.
 * A user should have their own dashboard which lists the reviews they've created.
 
+### ▫︎ Component Diagram 
+  <img src="./public/img/review1.png" width="640px" />
+  <img src="./public/img/review2.png" width="640px" />
+  <img src="./public/img/review3.png" width="640px" />
+
 ## 2. Development
 ### ▫︎ Technologies Used:
 + [ReactJs](https://reactjs.org/) 
