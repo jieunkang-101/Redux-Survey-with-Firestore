@@ -12,6 +12,9 @@
 ## 1. Description
 A React application that have CRUD functionality of user's review with firestore, firebase authentication, and cloud functions.
   * Deployed to firebase hosting! https://react-movie-review.firebaseapp.com/
+  * Credential for testing:
+    - Email: test@test.com
+    - Password: test1234
 
 ### ▫︎ Preview
 <tabel>
